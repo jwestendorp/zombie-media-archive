@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
+import { getCollection } from "astro:content";
 import {
   Card,
   CardContent,
@@ -11,8 +12,10 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-const posts = await Astro.glob("../content/posts/*.md");
+// const posts = await Astro.glob("../content/posts/*/index.md");
+const posts = await getCollection("posts");
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout
@@ -20,46 +23,47 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
   description="This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI."
 >
   <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-    <div class="flex max-w-[980px] flex-col items-start gap-2">
+    <div class="flex flex-col items-start gap-2">
       <h1
         class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl"
       >
         Welcome to the Zombie Media Archive
       </h1>
       <p class="max-w-[700px] text-lg text-muted-foreground">
-        Explore the collection of Zombie Media.
+        Explore the collection of Zombie Media and repurposed e-waste.
       </p>
 
-      <div>
-        <ScrollArea class="w-96 whitespace-nowrap rounded-md border">
-          <div class="flex space-x-4 pb-4">
-            {
-              posts.map((post) => (
-                <a href="">
-                  <Card class="shrink-0">
-                    <CardHeader>
-                      <div class="overflow-hidden rounded-md">
-                        <img
-                          src="https://i.ebayimg.com/images/g/ZhYAAOSwApBhX5z7/s-l1200.webp"
-                          alt=""
-                          class={cn(
-                            "h-auto w-80 object-cover transition-all hover:scale-105",
-                            "aspect-square"
-                          )}
-                        />
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <CardTitle>{post.frontmatter.title}</CardTitle>
-                      <CardDescription>Card Description</CardDescription>
-                    </CardContent>
-                    <CardFooter>by: {post.frontmatter.author}</CardFooter>
-                  </Card>
-                </a>
-              ))
-            }
-          </div>
-        </ScrollArea>
+      <div
+        class="grid w-full gap-3"
+        style="grid-template-columns: repeat(auto-fit, minmax(300px,1fr));"
+      >
+        {
+          posts.map((post) => (
+            <a href="" class="w-full  overflow-hidden aspect-[3/4.5]">
+              <Card>
+                <CardHeader>
+                  <div class="overflow-hidden rounded-md">
+                    <Image
+                      src={post.data.thumbnail}
+                      alt=""
+                      class={cn(
+                        "h-auto w-80 object-cover transition-all hover:scale-105",
+                        "aspect-square"
+                      )}
+                    />
+                  </div>
+                </CardHeader>
+                <CardContent class="w-full">
+                  <CardTitle>{post.data.title}</CardTitle>
+                  {post.data.description && (
+                    <CardDescription>{post.data.description}</CardDescription>
+                  )}
+                </CardContent>
+                <CardFooter>by: {post.data.author}</CardFooter>
+              </Card>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
