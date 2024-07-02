@@ -1,8 +1,8 @@
 ---
-title: Laptop screen
-thumbnail: "./lcd.png"
-author: Jonas Westendorp
-description: Use an old laptop screen as a HDMI display
+title: Nintendo DS game
+thumbnail: "./clippy alt smol.png"
+author: Rein Verwoerd
+description: Make your own progams for Nintendo DS
 ---
 
 # Hi there!
