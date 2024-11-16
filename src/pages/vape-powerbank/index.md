@@ -16,7 +16,7 @@ layout: "@/layouts/BaseLayout.astro"
 
 ## Haal de vape uit elkaar
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EY3l1kFR67c?si=MyiGAgIOiWq3C47Q" title="YouTube video player" frameborder="0" allow="autoplay;encrypted-media;  picture-in-picture; web-share"  allowfullscreen ></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EY3l1kFR67c?si=MyiGAgIOiWq3C47Q" title="YouTube video player" frameborder="0" allow="autoplay;encrypted-media;  picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
 
 ## Check of de batterij
 
