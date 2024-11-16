@@ -8,6 +8,7 @@ export default defineConfig({
     ? "https://jwestendorp.github.io"
     : "http://localhost:4321",
   base: process.env.CI ? "zombie-media-archive" : "",
+  markdown: {},
   integrations: [
     react(),
     tailwind({

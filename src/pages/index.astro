@@ -39,7 +39,7 @@ import { Image } from "astro:assets";
       >
         {
           posts.map((post) => (
-            <a href="" class="w-full  overflow-hidden aspect-[3/4.5]">
+            <a href={post.slug} class="w-full  overflow-hidden aspect-[3/4.5]">
               <Card>
                 <CardHeader>
                   <div class="overflow-hidden rounded-md">
