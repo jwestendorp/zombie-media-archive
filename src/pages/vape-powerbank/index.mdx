@@ -1,0 +1,128 @@
+---
+title: Vape Powerbank
+thumbnail: "./a3-2.png"
+author: Jonas Westendorp
+description: Hergebruik de oplaadbare batterij uit een wergwerp electronische cigaret.
+slug: Vape-Powerbank
+layout: "@/layouts/BlogLayout.astro"
+---
+
+import { YouTube } from "astro-embed";
+import { Image } from "astro:assets";
+import cover from "./workshop.jpg";
+import img1 from "./DSC08665(Large).JPG";
+import img2 from "./DSC08668(Large).JPG";
+import usb from "./usb-c-usb-a.jpg";
+import mah from "./mah.jpg";
+import { H2 } from "@/components/ui/scrollingHeader.tsx";
+
+<article className="leading-7 mt-6 p-3 relative">
+<div style="position: fixed;top:0;left:0;width:100vw;height:100vh;background-image: url('bg.png'); background-size:cover; mix-blend-mode: hard-light; opacity:0.05; margin: auto;   background-position: center; overflow: hidden; z-index:-1"></div>
+
+<Image src={cover} alt="cover image" />
+
+Hergebruik de oplaadbare batterij uit een wergwerp electronische cigaret
+
+<section>
+<H2 client:visible>Benodigdheden</H2>
+
+<Image src={img1} alt="benodigdheden" />
+
+- vape
+- 2 batterij terminals
+- oplaadcircuit
+- 2 draadjes:
+  - 4cm (zwart) positieve draad
+  - 3cm (rood) negatieve draad
+
+</section>
+
+<section>
+<H2 client:visible>Gereedschap</H2>
+
+<Image src={img2} alt="benodigd gereedschap" />
+
+- tang
+- soldeerspullen:
+  - soldeerbout
+  - tin
+  - striptang
+- multimeter
+
+<b>optioneel:</b>
+
+- handschoenen
+- superlijm
+- kapton tape / isolatietape
+
+</section>
+
+<section>
+ <H2 client:visible>1. Haal de vape uit elkaar</H2>
+<YouTube id="https://youtu.be/EY3l1kFR67c?si=Su3Hcd7dWiTokHTm" params="rel=0" />
+Nadat je de batterij hebt bemachtigd uit de vape, kijk je welke capaciteit de batterij heeft. Dit wordt uitgedruk in Milliampère-uur (mAh). [Dit getal drukt uit hoe lang (in uren) de batterij een bepaalde stroom (mA) kan geven. Als er dus meer stroom van de batterij wordt gevraagd zal de batterij eerder leeg zijn. ](https://www.externebatterij.nl/service/betekenis-mah/)
+
+<Image src={mah} alt="close-up onderscheid batterij capaciteit" />
+Met de materialen van deze workshop kun je een batterij me 550mAh, 500mAh of
+400mAh gebruiken. Er zijn 2 versies van de 3D-geprinte batterijhouders, check
+welke versie je nodig hebt voor jouw batterij op de afbeelding hierboven.
+
+</section>
+
+<section>
+ <H2 client:visible>2. Check de batterij</H2>
+
+<b className="text-red-700 underline text-lg">
+  Gebruik de batterij niet als deze zichtbaar beschadigd is
+</b>
+
+<YouTube
+  id="https://www.youtube.com/watch?v=JV-433_f-IY"
+  params="rel=0"
+
+/>
+
+Een goede batterij geeft tussen de 2.5 en 4.2 volt aan. Als de batterij minder
+dan 2.5 volt heeft is deze teveel ontladen geweest (overdischarge), hierdoor
+verliest de batterij een deel van zijn capaciteit en kun je hem niet meer
+volledig opladen.
+
+</section>
+<section>
+  <H2 client:visible>3. Draadjes strippen</H2>
+  <YouTube id="https://www.youtube.com/watch?v=SkcnJSkhTwM" params="rel=0" />
+  Strip de draadjes met de striptang (rood = 3cm, zwart = 4cm). 
+  Vertin daarna de uiteindes met de soldeerbout.
+</section>
+<section>
+  <H2 client:visible>4. Batterij terminals solderen</H2>
+  <YouTube id="https://www.youtube.com/watch?v=cYffp_u-VK0" params="rel=0" />
+  Breng wat tin aan op de batterij terminals en soldeer daarna de draadjes eraan vast. Zorg dat je 2 verschillde terminals gebruikt: die met de vering wordt de negatieve (zwart), de andere (rood) wordt de positieve terminal. Nadat je draadjes hebt vastgesoldeerd plaats je de terminals in de batterijhouder zoals in de video.
+</section> 
+<section>
+  <H2 client:visible>5. Batterijcircuit solderen</H2>
+  <YouTube id="https://www.youtube.com/watch?v=o7mDod82ZMA" params="rel=0" />
+  Met het batterijcircuit kun je een Lithium-Ion batterij weer opladen. Dit is het type batterij dat ook in wegwerp-vapes wordt gebruikt. Naast opladen zorgt dit circuit er ook voor dat de powerbank afschakeld wanneer het voltage van de batterij te laag wordt, dit is een bescherming tegen *overmatige ontlading (overdischarge)*. Overmatige ontlading kan er namelijk voor zorgen dat de batterij capaciteit verliest.
+</section>
+<section>
+  <H2 client:visible>6. Test je powerbank!</H2>
+  <YouTube id="https://www.youtube.com/watch?v=TCNXXxPRkBE" params="rel=0" />
+  Plaats de batterij in de powerbank zoals in de video. Zorg ervoor dat je de batterij er op de juiste manier in doet (rood = positief, zwart is negatief)! Zorg ervoor dat de contactpunten van de batterij goed contact maken met de batterijterminals. Test nu of de powerbank werkt door een apparaat aan te sluiten op de USB-A poort. Je kan ook testen of het opladen van de batterij werkt door deze aan een telefoonoplader te hangen via de USB-C poort.
+  <Image src={usb} alt="usb-c poort opladen, usb-a poort ontladen"/>
+  Optioneel: doe een stukje (kapton) tape om je batterij.
+</section>
+<section>
+  <H2 client:visible>7. in elkaar zetten</H2>
+  <YouTube id="https://www.youtube.com/watch?v=34yKNE84a5E" params="rel=0" />
+  Zet de powerbank in elkaar zoals in de video
+</section>
+<section>
+  <H2 client:visible>8. uit elkaar halen</H2>
+  Mocht je ooit de batterij van je powerbank willen vervangen, dan kun je hem op de volgende manier weer open maken:
+  <YouTube id="https://www.youtube.com/watch?v=r0saFgoPAxk" params="rel=0" />
+
+Als je niet van plan bent om ooit de batterij te vervangen dan kun je er ook voor kiezen om het dopje van de powerbank vast te lijmen met wat superlijm.
+
+</section>
+
+</article>
